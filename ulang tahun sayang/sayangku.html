@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Untuk Kamu ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            z-index: 10;
+            width: 350px;
+            animation: fadeIn 2s ease;
+        }
+
+        .photo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ff4d6d;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* Efek Hati */
+        .heart {
+            position: absolute;
+            color: rgba(255, 0, 76, 0.7);
+            font-size: 20px;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- FOTO -->
+        <div class="photo">
+            <!-- GANTI "foto-kita.jpg" DENGAN NAMA FOTO KAMU -->
+            <img src="ultah.jpeg" alt="Foto">
+        </div>
+
+        <h1>Untuk Kamu ❤️</h1>
+        <p>
+            cie sebentar lagi ulang tahun yaa<br><br>
+            Setiap senyummu adalah alasanku bahagia.<br><br>
+            Terima kasih sudah hadir<br>
+            dan mengisi hariku dengan cinta 💕<br><br>
+            sabar yaa nnti mas traktir makan enak-enak 😘<br><br>
+            Doain mas juga yaa biar cepet kelar urusan disini<br>
+            sama sabar ldr nya juga yaa<br><br>
+        
+        </p>
+
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+            heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
